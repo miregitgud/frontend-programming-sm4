@@ -1,0 +1,74 @@
+/* Small Screen */
+.container {
+    margin: 1rem;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .form__right {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content:end;
+    flex-direction: column;
+
+  }
+  
+  .form__title {
+    text-align: center;
+    color: #4361ee;
+    margin-bottom: 1rem;
+    font-size: 2.44rem;
+  }
+  
+  .form__button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #4361ee;
+    color: #fff;
+  }
+  
+  .form__image {
+    width: 50%;
+    height: 50%;
+    border-radius: 25px;
+    display: flex;
+    margin-left: 9rem;
+  }
+  .addmovieform {
+    display: flex;
+    flex-direction: column;
+    margin-right: 7rem;
+    margin-left: 7rem;
+  }
+  
+  /* Medium Screen */
+  @media (min-width: 768px) {
+  }
+  
+  /* Large Screen */
+  @media (min-width: 992px) {
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+
+    .form {
+        margin: 0 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+      }
+
+    .form__left {
+        flex-basis: 60%;
+    }
+    .form__right {
+        flex-basis: 60%;
+      }
+}

@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
-import './App.css';
 import React from 'react';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Home from './pages/Home'
+// import Header from './components/Header';
+// import Main from './components/Main';
+// import Footer from './components/Footer';
 
 function App() {
   return (
@@ -24,10 +24,8 @@ function App() {
     //   </header>
     // </div>
 
-    <div className='App'>
-      <Header />
-      <Main />
-      <Footer />
+    <div>
+      <Home />
     </div>
   );
 }
