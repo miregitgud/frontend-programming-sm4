@@ -9,6 +9,7 @@ const Main = () => {
         <main>
             <Hero />
             <Movies />
+            <AddMovieForm />
         </main>
     )
 }
@@ -18,7 +19,6 @@ const Home = () => {
         <div> 
             <Navbar /> 
             <Main />
-            <AddMovieForm />
             <Footer />
         </div>
     )

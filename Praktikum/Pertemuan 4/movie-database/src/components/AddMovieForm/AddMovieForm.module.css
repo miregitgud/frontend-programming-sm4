@@ -36,8 +36,6 @@
     width: 50%;
     height: 50%;
     border-radius: 25px;
-    display: flex;
-    margin-left: 9rem;
   }
   .addmovieform {
     display: flex;
@@ -62,7 +60,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        text-align: left;
+        text-align: center;
       }
 
     .form__left {

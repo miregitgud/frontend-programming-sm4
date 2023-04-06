@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import React from 'react';
 import Home from './pages/Home'
+import Counter from './components/Counter/Counter';
 // import Header from './components/Header';
 // import Main from './components/Main';
 // import Footer from './components/Footer';
@@ -26,6 +27,7 @@ function App() {
 
     <div>
       <Home />
+      {/* <Counter /> */}
     </div>
   );
 }
