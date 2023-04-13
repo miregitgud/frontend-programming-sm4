@@ -34,8 +34,12 @@
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 10px;
-  background-color: #4361ee;
+  background-color: #000000;
   color: #fff;
+}
+
+.hero__button:hover {
+  background-color: #4361ee;
 }
 
 .hero__image {

@@ -1,51 +1,92 @@
 /* Small Screen */
 .container {
-    margin: 1rem;
+    margin: 5rem 1rem;
+    padding: 1rem;
   }
   
   .form {
     display: flex;
     flex-direction: column;
-    text-align: center;
   }
-  
-  .form__right {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content:end;
-    flex-direction: column;
 
+  .form__left {
+    display:block;
+    margin: auto;
   }
   
-  .form__title {
+  .addmovieform__title {
     text-align: center;
     color: #4361ee;
     margin-bottom: 1rem;
     font-size: 2.44rem;
   }
   
-  .form__button {
+  .addmovieform__button {
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: #4361ee;
+    background-color: #000000;
     color: #fff;
+    margin: 1.5rem auto;
+    display: block; 
+  }
+
+  .addmovieform__button:hover {
+    background-color: #4361ee;
   }
   
   .form__image {
-    width: 50%;
-    height: 50%;
+    max-width: 100%;
+    height: auto;
     border-radius: 25px;
   }
   .addmovieform {
     display: flex;
     flex-direction: column;
-    margin-right: 7rem;
-    margin-left: 7rem;
+    margin-bottom: 20px;
+  }
+
+  .addmovieform__input {
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+  }
+
+  .addmovieform__input:focus {
+    border: 3px solid #4361ee;
+  }
+
+  .addmovieform__genre {
+    outline: none;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+    height: 30px;
+    width: max-content;
+    border: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+  }
+
+  .addmovieform__genre:focus {
+    border: 3px solid #4361ee;
+  }
+
+  .addmovieform__genre:invalid {
+    color: grey;
   }
   
   /* Medium Screen */
   @media (min-width: 768px) {
+  }
+
+  .form__left {
+    display: block;
+    flex-basis: 60%;
+}
+  .form__right {
+    flex-basis: 60%;
   }
   
   /* Large Screen */
@@ -56,17 +97,16 @@
     }
 
     .form {
-        margin: 0 1rem;
+        display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
-        text-align: center;
       }
 
     .form__left {
+        display: block;
         flex-basis: 60%;
     }
     .form__right {
-        flex-basis: 60%;
+        flex-basis: 40%;
       }
 }

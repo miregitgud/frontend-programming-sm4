@@ -5,7 +5,7 @@ const Footer = () => {
         <div className={styles.container}>
             <footer className={styles.footer}>
                 <h2 className={styles.footer__title}> Movie App</h2>
-                <p className={styles.footer__author}> @miregitgud </p>
+                <p className={styles.footer__author}> @miregitgud 2023</p>
             </footer>
         </div>
     )
