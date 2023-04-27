@@ -38,7 +38,7 @@ const Movies = (props) => {
           })
         }
         </div>
-        <button onClick={addMovie}>Add Movie</button>
+        <button className={styles.addMovie} onClick={addMovie}>Add Movie</button>
       </section>
     </div>
   );

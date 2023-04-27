@@ -19,6 +19,20 @@
   flex-direction: column;
 }
 
+.addMovie {
+  padding: 0.8rem;
+  border: none;
+  width: 6rem;
+  border-radius: 10px;
+  background-color: #000000;
+  color: #fff;
+}
+
+.addMovie:hover {
+  background-color: #4361ee;
+  width: 10rem;
+}
+
 /* Medium Screen */
 @media (min-width: 768px) {
   .movie__container {
