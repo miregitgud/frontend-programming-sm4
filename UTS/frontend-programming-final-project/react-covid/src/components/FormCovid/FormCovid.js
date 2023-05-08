@@ -2,7 +2,7 @@ import { useState } from "react";
 import Alert from "../Alert/Alert";
 import styles from "./FormCovid.module.css";
 import image1 from "../../assets/form.svg";
-import data from '../../pages/Home'
+import data from '../../utils/constants/provinces'
 
 const provinceData = data.provinces.map((item) => ({ ...item }));
 
