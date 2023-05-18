@@ -11,8 +11,8 @@ const Movies = (props) => {
   const addMovie = () => {
     const movie = {
       id: nanoid(10),
-      title: "Interstellar",
-      year: "2014",
+      title: "Example Movie",
+      year: "20xx",
       type: "Movie",
       poster: "https://picsum.photos/300/400"
     };

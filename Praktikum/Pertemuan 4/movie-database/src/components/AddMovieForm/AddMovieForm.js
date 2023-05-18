@@ -8,48 +8,35 @@ const AddMovieForm = (props) => {
         // destructuring props
         const { movies, setMovies } = props;
 
-        // membuat state title
-        const [title, setTitle] =  useState("");
-
-        // membuat state date
-        const [date, setDate] = useState("");
-
-        // membuat state image 
-        const [image, setImage] = useState("");
-
-        // membuat state select
-        const [genre, setGenre] = useState("");
+        // handle multiple input with 1 state
+        // membuat state formData
+        // nilai state menggunakan object
+        const [ formData, setFormData ] = useState({
+            title: "",
+            date: "",
+            image: "",
+            genre: "",
+        });
 
         // Membuat state: isTitleError, isDateError
         const [isTitleError, setIsTitleError] = useState(false);
         const [isDateError, setIsDateError] = useState(false);
         const [isImageError, setIsImageError] = useState(false);
         const [isGenreError, setIsGenreError] = useState(false);
-       
-        // membuat fungsi handleTitle
-        const handleTitle = (e) => {
-            setTitle(e.target.value);
+
+        const handleChange = (e) => {
+            const { name, value } = e.target;
+
+            setFormData({
+                ...formData,
+                [name]: value,
+            });
         }
 
-        // membuat fungsi handleDate
-        const handleDate = (e) => {
-            setDate(e.target.value);
-        }
+        const { title, date, image, genre} = formData;
 
-        // membuat fungsi handleImageURL
-        const handleImageURL = (e) => {
-            setImage(e.target.value);
-        }
-
-        const handleGenre = (e) => {
-            setGenre(e.target.value);
-        }
-
-        // membuat fungsi handleSubmit
-        const handleSubmit = (e) => {
-            // mencegah value untuk kembali menjadi default
-            e.preventDefault();
-
+        // fungsi validasi form
+        const validate = () => {  
 
         // Jika date, title, image, dan select kosong, set semuanya true
         if (date === "" && title === "" && image === "" && genre === "") {
@@ -57,43 +44,59 @@ const AddMovieForm = (props) => {
             setIsDateError(true);
             setIsImageError(true);
             setIsGenreError(true);
+            return false;
         }
         // Jika title kosong, set isTitleError true
         else if (title === "") {
             setIsTitleError(true);
+            return false;
         }
         // Jika date kosong, set isDateError true
         else if (date === "") {
             setIsDateError(true);
+            return false;
         }
         // Jika image kosong, set isImageError true
         else if (image === "") {
             setIsImageError(true);
+            return false;
         }
         // Jika genre kosong, set isGenreError true
         else if (genre === "") {
             setIsGenreError(true);
-        }                      
-
+            return false;
+        }
         // Jika semuanya sudah memiliki input yang valid, maka push movie dan set semua error menjadi false
         else {
+            setIsTitleError(false);
+            setIsDateError(false);
+            setIsImageError(false);
+            setIsGenreError(false);
+            return true;
+        }
+    }
+
+        // membuat fungsi addmovie
+        const addMovie = () => {
+            
             const movie = {
-            id: nanoid(10),
-            title: title,
-            year: date,
-            type: genre,
-            poster: image,
-         };
+                id: nanoid(10),
+                title: title,
+                year: date,
+                type: genre,
+                poster: image,
+             };
+    
+        // SOLVED: HOW TO ADD MOVIE TO MOVIES :)
+        setMovies([...movies, movie]);
+        }
 
-    // SOLVED: HOW TO ADD MOVIE TO MOVIES :)
-    setMovies([...movies, movie]);
-
-    setIsTitleError(false);
-    setIsDateError(false);
-    setIsImageError(false);
-    setIsGenreError(false);
+        // membuat fungsi handleSubmit
+        const handleSubmit = (e) => {
+            // mencegah value untuk kembali menjadi default
+            e.preventDefault();          
+            validate() && addMovie();
   }
-}
 
     return (
         <div className={styles.container}>
@@ -108,22 +111,22 @@ const AddMovieForm = (props) => {
                     <form onSubmit={handleSubmit}>
 
                         <div className={styles.addmovieform}>
-                            <input onChange={handleTitle} className={styles.addmovieform__input} type="text" placeholder="Title" id="title" name="title" value={title} />
+                            <input onChange={handleChange} className={styles.addmovieform__input} type="text" placeholder="Title" id="title" name="title" value={title} />
                             {isTitleError && <Alert>Title can't be empty!</Alert>}
                         </div>
                         
                         <div className={styles.addmovieform}>
-                            <input onChange={handleDate} className={styles.addmovieform__input} type="number" placeholder="Date" id="date" name="date" value={date} />
+                            <input onChange={handleChange} className={styles.addmovieform__input} type="number" placeholder="Date" id="date" name="date" value={date} />
                             {isDateError && <Alert>Date can't be empty!</Alert>}
                         </div>
 
                         <div className={styles.addmovieform}>
-                            <input onChange={handleImageURL} className={styles.addmovieform__input} type="text" placeholder="Image URL" id="image" name="image" value={image} />
+                            <input onChange={handleChange} className={styles.addmovieform__input} type="text" placeholder="Image URL" id="image" name="image" value={image} />
                             {isImageError && <Alert>Image can't be empty!</Alert>}
                         </div>
 
                         <div className={styles.addmovieform}>
-                            <select onChange={handleGenre} value={genre} className={styles.addmovieform__genre}>
+                            <select onChange={handleChange} name="genre" value={genre} className={styles.addmovieform__genre}>
                             <option value="" disabled selected hidden>Genre</option>
                             <option value="Horror">Horror</option>
                             <option value="Thriller">Thriller</option>

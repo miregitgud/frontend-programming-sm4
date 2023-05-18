@@ -1,34 +1,29 @@
 // import logo from './logo.svg';
 import React from 'react';
 import Home from './pages/Home'
-import Counter from './components/Counter/Counter';
+import { Routes, Route } from "react-router-dom";
+import CreateMovie from './pages/movie/Create';
+import NowPlayingMovie from './pages/movie/NowPlaying';
+import PopularMovie from './pages/movie/Popular';
+import TopRatedMovie from './pages/movie/TopRated';
+import Layout from './Layout';
 // import Header from './components/Header';
 // import Main from './components/Main';
 // import Footer from './components/Footer';
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-
-    <div>
-      <Home />
-      {/* <Counter /> */}
-    </div>
+    <>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/movie/Create" element={<CreateMovie />}></Route>
+        <Route path="/movie/NowPlaying" element={<NowPlayingMovie />}></Route>
+        <Route path="/movie/Popular" element={<PopularMovie />}></Route>
+        <Route path="/movie/TopRated" element={<TopRatedMovie />}></Route>
+      </Routes>
+    </Layout> 
+    </>
   );
 }
 
