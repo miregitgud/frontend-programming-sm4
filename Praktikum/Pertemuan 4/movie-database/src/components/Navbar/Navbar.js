@@ -11,19 +11,19 @@ const Navbar = () => {
                 <div>
                     <ul className={styles.navbar__list}>
                         <li className={styles.navbar__item}>
-                            <Link to="/">Home</Link>
+                            <Link className={styles.navbar__link} to="/">Home</Link>
                         </li>
                         <li className={styles.navbar__item}>
-                            <Link to="/movie/Create">Add Movie</Link>
+                            <Link className={styles.navbar__link} to="/movie/Create">Add Movie</Link>
                         </li>
                         <li className={styles.navbar__item}>
-                            <Link to="/movie/Popular">Popular</Link>
+                            <Link className={styles.navbar__link} to="/movie/Popular">Popular</Link>
                         </li>
                         <li className={styles.navbar__item}>
-                            <Link to="/movie/NowPlaying">Now Playing</Link>
+                            <Link className={styles.navbar__link} to="/movie/NowPlaying">Now Playing</Link>
                         </li>
                         <li className={styles.navbar__item}>
-                            <Link to="/movie/TopRated">Top Rated</Link>
+                            <Link className={styles.navbar__link} to="/movie/TopRated">Top Rated</Link>
                         </li>
                     </ul>
                 </div>

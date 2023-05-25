@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Counter = () => {
     // membuat variable state
     // mengembalikan 2 data
     // nilai saat ini = 0
     // fungsi untuk mengubah state
-    const [hasil, setHasil] = useState(0);
+    let [hasil, setHasil] = useState(0);
+    let [nama, setNama] = useState("Ayyash");
 
 
     const tambah = () => {
@@ -13,10 +14,24 @@ const Counter = () => {
         setHasil(hasil+1);
     }
 
+    const addNama = () => {
+        setNama("Ayyash Muhammad")
+    }
+
+    useEffect(function () {
+        console.log("Dijalankan ketika component di mount dan update.")
+
+        document.title = `Hasil ${hasil}`
+    },
+    [hasil]
+    );
+
     return (
         <div>
             <p>Hasil: {hasil}</p>
             <button onClick={tambah}>Add</button>
+            <p>Nama: {nama}</p>
+            <button onClick={addNama}>ubahNama</button>
         </div>
     )
 }
