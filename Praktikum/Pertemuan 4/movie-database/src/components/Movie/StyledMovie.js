@@ -1,5 +1,9 @@
+import styled from "styled-components";
+
+const StyledMovie = styled.div`
 .movie {
     margin-bottom: 1rem;
+    padding: 1rem;
   }
   
   .movie__image {
@@ -35,6 +39,8 @@
 @media (min-width: 992px) {
     .movie {
       flex-basis: 25%;
-      padding: 1rem;
     }
   }  
+`
+
+export default StyledMovie;

@@ -1,4 +1,4 @@
-import styles from "./Movie.module.css";
+import StyledMovie from "./StyledMovie";
 
 //  props catch
 const Movie = (props) => {
@@ -6,16 +6,18 @@ const Movie = (props) => {
     const { movie } = props;
 
     return (
-        <div className={styles.movie}>
+      <StyledMovie>
+        <div className="movie">
             <img
-              className={styles.movie__image}
+              className="movie__image"
               src={movie.poster}
               alt=""
             />
-            <h3 className={styles.movie__title}>{movie.title}</h3>
-            <p className={styles.movie__type}>{movie.type}</p>
-            <p className={styles.movie__date}>{movie.year}</p>
-          </div>    
+            <h3 className="movie__title">{movie.title}</h3>
+            <p className="movie__type">{movie.type}</p>
+            <p className="movie__date">{movie.year}</p>
+          </div>  
+      </StyledMovie>     
     )
 }
 

@@ -1,5 +1,6 @@
 import styles from "./Movies.module.css";
 import Movie from "../Movie/Movie"
+import Button from "../ui/Button/Button";
 import { nanoid } from "nanoid";
 
 const Movies = (props) => {
@@ -38,7 +39,7 @@ const Movies = (props) => {
           })
         }
         </div>
-        <button className={styles.addMovie} onClick={addMovie}>Add Movie</button>
+        <Button size="md" onClick={addMovie}>Add Movie</Button>
       </section>
     </div>
   );

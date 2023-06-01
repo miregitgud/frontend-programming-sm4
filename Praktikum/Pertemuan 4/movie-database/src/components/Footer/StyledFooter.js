@@ -1,3 +1,6 @@
+import styled from "styled-components";
+
+const StyledFooter = styled.div`
 /* Small Screen */
 .container {
     background-color: #4361ee;
@@ -29,3 +32,6 @@
      * We dont change styling footer. 
      */
   }
+`
+
+export default StyledFooter;

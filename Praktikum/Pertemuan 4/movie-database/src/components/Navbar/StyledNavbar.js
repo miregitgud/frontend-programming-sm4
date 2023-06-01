@@ -1,3 +1,6 @@
+import styled from "styled-components";
+
+const StyledNavbar = styled.div`
 /* Small Screen */
 .container {
   background-color: #4361ee;
@@ -63,3 +66,6 @@
    * We haven't styling Navbar.
    */
 }
+`
+
+export default StyledNavbar;

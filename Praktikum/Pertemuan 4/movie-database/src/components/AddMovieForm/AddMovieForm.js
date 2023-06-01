@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
 import Alert from "../Alert/Alert";
+import Button from "../ui/Button/Button";
 
 const AddMovieForm = (props) => {
 
@@ -139,7 +140,7 @@ const AddMovieForm = (props) => {
                         </div>
 
                         <div>
-                            <button className={styles.addmovieform__button}>Submit Movie</button>
+                            <Button size="lg" full>Submit Movie</Button>
                         </div>
                     </form>
                 </div>

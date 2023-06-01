@@ -11,9 +11,13 @@ import Layout from './Layout';
 // import Main from './components/Main';
 // import Footer from './components/Footer';
 
+import { ThemeProvider } from 'styled-components';
+import Theme from './utils/constants/Theme';
+
 function App() {
   return (
     <>
+    <ThemeProvider theme={Theme}>
     <Layout>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -23,6 +27,7 @@ function App() {
         <Route path="/movie/TopRated" element={<TopRatedMovie />}></Route>
       </Routes>
     </Layout> 
+    </ThemeProvider>
     </>
   );
 }

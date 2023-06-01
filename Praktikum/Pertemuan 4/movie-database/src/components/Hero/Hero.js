@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from "./Hero.module.css";
 
+import Button from "../ui/Button/Button";
+
 const Hero = () => {
 const [movie, setMovie] = useState("");
 
@@ -32,7 +34,7 @@ useEffect(function () {
           <p className={styles.hero__description}>
             {movie.Plot}
           </p>
-          <button className={styles.hero__button}>Watch</button>
+          <Button size="md" variant="secondary">Watch</Button>
         </div>
         <div className="hero__right">
           <img
