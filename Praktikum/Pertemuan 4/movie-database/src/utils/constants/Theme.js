@@ -28,7 +28,7 @@ const Theme = {
         mono: "Menlo, monospace",
       },
 
-    fontSizes: {
+    fontSize: {
         xs: "0.75rem",
         sm: "0.875rem",
         md: "1rem",
@@ -44,7 +44,7 @@ const Theme = {
         "9xl": "8rem",
       },
 
-    fontWeights: {
+    fontWeight: {
         hairline: 100,
         thin: 200,
         light: 300,
@@ -56,7 +56,7 @@ const Theme = {
         black: 900,
       },
 
-    lineHeights: {
+    lineHeight: {
         normal: "normal",
         none: 1,
         shorter: 1.25,
@@ -74,7 +74,7 @@ const Theme = {
         "10": "2.5rem",
       },
 
-    letterSpacings: {
+    letterSpacing: {
         tighter: "-0.05em",
         tight: "-0.025em",
         normal: "0",

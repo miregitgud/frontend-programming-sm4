@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 const StyledMovie = styled.div`
 .movie {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     padding: 1rem;
+    width:17rem;
+    height:33rem;
   }
   
   .movie__image {
@@ -15,8 +17,9 @@ const StyledMovie = styled.div`
   
   .movie__title {
     color: #4361ee;
-    font-size: 1.95rem;
-    margin-bottom: 0.5rem;
+    margin:auto;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;  
   }
   
   .movie__date {

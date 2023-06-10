@@ -12,7 +12,7 @@ const Main = () => {
     return (
         <main>
             <Hero />
-            <Movies movies={movies} setMovies={setMovies} />
+            <Movies title="Local Movies" movies={movies} setMovies={setMovies} />
             <AddMovieForm movies={movies} setMovies={setMovies} />
         </main>
     )
