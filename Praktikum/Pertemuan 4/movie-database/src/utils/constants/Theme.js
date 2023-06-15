@@ -1,5 +1,11 @@
 const Theme = {
-    buttonColor : {
+
+    colors: {
+      primary: `#4361ee`,
+      secondary: `#b5179e`
+    },
+
+    buttonColor: {
         primary: `#4361ee`,
         secondary: `grey`,
         danger: `red`,

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Movies from "../../components/Movies/Movies"
 import Hero from "../../components/Hero/Hero"
+import ENDPOINTS from "../../utils/constants/endpoints";
 
 const PopularMovie = () => {
     // simpan API dan URL ke variable
@@ -11,8 +12,7 @@ const PopularMovie = () => {
 
     async function getPopularMovies() {
         // fetch data dari axios
-        const URL = `https://api.themoviedb.org/3/movie/popular?region=ID&api_key=${API_KEY}`;
-        const response = await axios(URL);
+        const response = await axios(ENDPOINTS.POPULAR);
 
         // simpan data ke state
         setMovies(response.data.results)
@@ -27,7 +27,7 @@ const PopularMovie = () => {
     return (
         <>
             <Hero />
-            <Movies title="Popular Movies" movies={movies} />
+            <Movies title="Popular Movies" movies={movies}/>
         </>
     );
 }

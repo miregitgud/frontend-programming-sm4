@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 
 const Movies = (props) => {
   // destructuring props
-  const { movies, setMovies } = props;
+  const { title, movies, setMovies } = props;
 
   // buat fungsi tambah film
   // dijalankan ketika tombol diklik
@@ -26,7 +26,7 @@ const Movies = (props) => {
   return (
     <div className={styles.container}>
       <section className={styles.movies}>
-        <h2 className={styles.movies__title}>{props.title}</h2>
+        <h2 className={styles.movies__title}>{title}</h2>
         <div className={styles.movie__container}>
         {/* 
         Looping data movies: map

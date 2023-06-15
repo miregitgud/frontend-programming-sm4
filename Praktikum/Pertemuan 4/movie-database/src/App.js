@@ -13,6 +13,7 @@ import Layout from './Layout';
 
 import { ThemeProvider } from 'styled-components';
 import Theme from './utils/constants/Theme';
+import Detail from './pages/movie/Detail';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/movie/NowPlaying" element={<NowPlayingMovie />}></Route>
         <Route path="/movie/Popular" element={<PopularMovie />}></Route>
         <Route path="/movie/TopRated" element={<TopRatedMovie />}></Route>
+        <Route path="/movie/:id" element={<Detail />}></Route>
       </Routes>
     </Layout> 
     </ThemeProvider>

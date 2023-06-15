@@ -6,6 +6,7 @@ const StyledMovie = styled.div`
     padding: 1rem;
     width:17rem;
     height:33rem;
+    margin: auto;
   }
   
   .movie__image {
@@ -19,7 +20,7 @@ const StyledMovie = styled.div`
     color: #4361ee;
     margin:auto;
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;  
+    margin-bottom: 0.01rem;  
   }
   
   .movie__date {
