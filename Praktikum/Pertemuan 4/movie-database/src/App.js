@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import React from 'react';
+import React, { useState } from 'react';
 import Home from './pages/Home'
 import { Routes, Route } from "react-router-dom";
 import CreateMovie from './pages/movie/Create';
@@ -16,6 +16,7 @@ import Theme from './utils/constants/Theme';
 import Detail from './pages/movie/Detail';
 
 function App() {
+  
   return (
     <>
     <ThemeProvider theme={Theme}>

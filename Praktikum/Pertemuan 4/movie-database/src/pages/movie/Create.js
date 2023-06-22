@@ -1,10 +1,11 @@
-import Counter from "../../components/Counter/Counter";
+import Hero from "../../components/Hero/Hero";
+import AddMovieForm from "../../components/AddMovieForm/AddMovieForm";
 
 const CreateMovie = () => {
     return (
         <>
-            <h2>Create Movie</h2>
-            <Counter />
+           <Hero />
+           <AddMovieForm />
         </>
     );
 }

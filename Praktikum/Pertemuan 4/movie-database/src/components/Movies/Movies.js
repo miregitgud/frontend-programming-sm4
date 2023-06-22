@@ -1,27 +1,9 @@
 import styles from "./Movies.module.css";
 import Movie from "../Movie/Movie"
-import Button from "../ui/Button/Button";
-import { nanoid } from "nanoid";
+import { useSelector } from "react-redux";
 
-const Movies = (props) => {
-  // destructuring props
-  const { title, movies, setMovies } = props;
-
-  // buat fungsi tambah film
-  // dijalankan ketika tombol diklik
-  const addMovie = () => {
-    const movie = {
-      id: nanoid(10),
-      title: "Example Movie",
-      year: "20xx",
-      type: "Movie",
-      poster: "https://picsum.photos/300/400"
-    };
-
-    // menambahkan movie ke state movies
-    // spread operator: copy dan merge array
-    setMovies([...movies, movie]);
-  }
+const Movies = ({ title }) => {
+const movies = useSelector((store) => store.movies.movies);
 
   return (
     <div className={styles.container}>
@@ -39,7 +21,6 @@ const Movies = (props) => {
           })
         }
         </div>
-        <Button size="md" onClick={addMovie}>Add Movie</Button>
       </section>
     </div>
   );

@@ -6,7 +6,6 @@ import ENDPOINTS from "../../utils/constants/endpoints";
 
 const TopRated = () => {
     // simpan API dan URL ke variable
-    const API_KEY = process.env.REACT_APP_API_KEY;
 
     const [movies, setMovies] = useState([]);
 

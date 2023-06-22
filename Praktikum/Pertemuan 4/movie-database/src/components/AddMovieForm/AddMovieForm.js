@@ -3,11 +3,13 @@ import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
 import Alert from "../Alert/Alert";
 import Button from "../ui/Button/Button";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMovie } from "../../features/movies";
 
 const AddMovieForm = (props) => {
 
         // destructuring props
-        const { movies, setMovies } = props;
 
         // handle multiple input with 1 state
         // membuat state formData
@@ -77,8 +79,11 @@ const AddMovieForm = (props) => {
         }
     }
 
+        const navigation = useNavigate();
+        const dispatch = useDispatch();
+
         // membuat fungsi addmovie
-        const addMovie = () => {
+        const submitMovie = () => {
             
             const movie = {
                 id: nanoid(10),
@@ -89,14 +94,16 @@ const AddMovieForm = (props) => {
              };
     
         // SOLVED: HOW TO ADD MOVIE TO MOVIES :)
-        setMovies([...movies, movie]);
+
+        dispatch(addMovie(movie))
+        navigation("/");
         }
 
         // membuat fungsi handleSubmit
         const handleSubmit = (e) => {
             // mencegah value untuk kembali menjadi default
             e.preventDefault();          
-            validate() && addMovie();
+            validate() && submitMovie();
   }
 
     return (
