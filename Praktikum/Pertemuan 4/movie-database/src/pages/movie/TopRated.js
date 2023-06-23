@@ -3,30 +3,30 @@ import { useEffect, useState } from "react";
 import Movies from "../../components/Movies/Movies"
 import Hero from "../../components/Hero/Hero"
 import ENDPOINTS from "../../utils/constants/endpoints";
+import { useDispatch } from "react-redux";
+import { updateMovie } from "../../features/movies";
 
 const TopRated = () => {
     // simpan API dan URL ke variable
 
-    const [movies, setMovies] = useState([]);
+    const dispatch = useDispatch()
 
     async function getTopRated() {
         // fetch data dari axios;
         const response = await axios(ENDPOINTS.TOPRATED);
+        const movies = response.data.results;
 
-        // simpan data ke state
-        setMovies(response.data.results)
+        dispatch(updateMovie(movies));
     }
 
     useEffect(() => {
         getTopRated();
     }, []);
 
-    console.log(movies)
-
     return (
         <>
             <Hero />
-            <Movies title="Top-Rated Movies" movies={movies} />
+            <Movies title="Top-Rated Movies"/>
         </>
     );
 }
