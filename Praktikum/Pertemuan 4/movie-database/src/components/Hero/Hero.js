@@ -19,7 +19,6 @@ function getRandomInt(max) {
   async function getTrendingMovie() {
     const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
     const response = await axios(URL);
-    console.log(response.data.results[0]);
     return response.data.results[getRandomInt(20)];
   }
 

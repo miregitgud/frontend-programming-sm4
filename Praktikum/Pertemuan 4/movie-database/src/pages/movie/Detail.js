@@ -2,7 +2,6 @@ import axios from "axios";
 import DetailMovie from "../../components/DetailMovie/DetailMovie";
 import Movies from "../../components/Movies/Movies";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
 import { useEffect } from "react";
 import ENDPOINTS from "../../utils/constants/endpoints";
 import { useDispatch } from "react-redux";
@@ -17,7 +16,6 @@ const Detail = () => {
         const movies = response.data.results;
 
         dispatch(updateMovie(movies))
-        console.log(response);
     }
 
     useEffect(() => {
